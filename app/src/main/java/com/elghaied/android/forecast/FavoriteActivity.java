@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.View;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 public class FavoriteActivity extends AppCompatActivity {
 
     private ActivityFavoriteBinding binding;
-    private TextView mTextViewFavoriteContent;
+    private RecyclerView mTextViewFavoriteContent;
     private ArrayList<City> mCities;
 
     @Override
@@ -46,12 +47,13 @@ public class FavoriteActivity extends AppCompatActivity {
             }
         });
 
-        mTextViewFavoriteContent = (TextView) findViewById(R.id.text_favorite_content);
-        Bundle extras = getIntent().getExtras();
-        String strMessage = extras.getString("inputField");
+        mTextViewFavoriteContent = (RecyclerView) findViewById(R.id.favorite_recycler_view);
 
-        Log.d("FavTest",strMessage);
-        mTextViewFavoriteContent.setText(strMessage);
+//        Bundle extras = getIntent().getExtras();
+//        String strMessage = extras.getString("inputField");
+//
+//        Log.d("FavTest",strMessage);
+//        mTextViewFavoriteContent.setText(strMessage);
 
         mCities = new ArrayList<>();
         City city1 = new City("Montréal", "Légères pluies", "22°C", R.drawable.cloud);
