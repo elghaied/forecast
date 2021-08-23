@@ -1,46 +1,65 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center"
-    android:background="@color/yellow" >
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="@dimen/text_title"
-        android:text="@string/city_name"
-        android:gravity="center"
-        />
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
+    android:layout_width="match_parent">
 
-        android:text="@string/city_desc" />
-
-    <RelativeLayout
+    <LinearLayout
+        android:layout_height="300dp"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="@color/yellow"
+       >
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_title"
+            android:text="@string/city_name"
+            android:gravity="center"
+            android:id="@+id/text_city_name"
+            />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/text_city_desc"
+            android:text="@string/city_desc" />
 
-
-        >
-        <ImageView
-            android:layout_width="80dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:src="@drawable/ic_baseline_wb_sunny_24"
-            /> <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="@dimen/text_title"
+
+
+            >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_baseline_wb_sunny_24"
+                /> <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_title"
+            android:layout_alignParentRight="true"
+            android:text="@string/city_temp"
+            android:id="@+id/text_city_temp"
+            />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentRight="true"
-        android:text="@string/city_temp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/fav"
+
         />
-
-    </RelativeLayout>
-
-</LinearLayout>
+</RelativeLayout>
