@@ -12,4 +12,5 @@
     <string name="city_name">Newyork</string>
     <string name="city_desc">City in New York State</string>
     <string name="city_temp">24</string>
+    <string name="connection_failed">Connection failed</string>
 </resources>
