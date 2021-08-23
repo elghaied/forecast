@@ -10,6 +10,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -22,6 +23,7 @@ import com.elghaied.android.forecast.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mTextViewCityDesc =(TextView) findViewById(R.id.text_city_desc);
         mTextViewCityTemp =(TextView) findViewById(R.id.text_city_temp);
         mLinearLayoutConnectionNotification = (LinearLayout) findViewById(R.id.connection_notification);
+        EditText mEditTextInputField = (EditText) findViewById(R.id.input_main_activity);
 
 
         // Buttons .
@@ -58,8 +61,11 @@ public class MainActivity extends AppCompatActivity {
         mButtonFav = (Button) findViewById(R.id.button_fav);
         mButtonFav.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Going to Favorite activity 
+                // Going to Favorite activity
                 Intent intent = new Intent(context, FavoriteActivity.class);
+                String inputField = mEditTextInputField.getText().toString();
+                Log.d("test",inputField);
+                intent.putExtra("inputField",inputField);
                 startActivity(intent);
             }
         });

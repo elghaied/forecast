@@ -68,7 +68,19 @@
             android:textSize="@dimen/text_title"
             android:text="@string/connection_failed"/>
     </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="text"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="24dp"
+        android:id="@+id/input_main_activity"
+        android:shadowColor="@color/black"
+        android:shadowRadius="2.4"
+        android:background="#f5ffb3"
+        >
 
+    </EditText>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

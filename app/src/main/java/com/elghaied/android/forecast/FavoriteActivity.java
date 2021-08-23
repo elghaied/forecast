@@ -9,17 +9,21 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.elghaied.android.forecast.databinding.ActivityFavoriteBinding;
 
 public class FavoriteActivity extends AppCompatActivity {
 
     private ActivityFavoriteBinding binding;
+    private TextView mTextViewFavoriteContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         binding = ActivityFavoriteBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -37,5 +41,12 @@ public class FavoriteActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        mTextViewFavoriteContent = (TextView) findViewById(R.id.text_favorite_content);
+        Bundle extras = getIntent().getExtras();
+        String strMessage = extras.getString("inputField");
+
+        Log.d("FavTest",strMessage);
+        mTextViewFavoriteContent.setText(strMessage);
     }
 }
