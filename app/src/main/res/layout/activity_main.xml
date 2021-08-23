@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="@dimen/text_title"
-            android:text="@string/city_name"
+
             android:gravity="center"
             android:id="@+id/text_city_name"
             />
@@ -27,7 +27,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:id="@+id/text_city_desc"
-            android:text="@string/city_desc" />
+     />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:layout_gravity="center"
             android:textSize="@dimen/text_title"
             android:layout_alignParentRight="true"
-            android:text="@string/city_temp"
+
             android:id="@+id/text_city_temp"
             />
 
