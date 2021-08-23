@@ -35,7 +35,7 @@
 
 
 
-    <include layout="@layout/content_scrolling" />
+    <include layout="@layout/content_favorite" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

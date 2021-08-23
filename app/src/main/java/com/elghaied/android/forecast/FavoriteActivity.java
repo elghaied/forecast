@@ -2,6 +2,7 @@ package com.elghaied.android.forecast;
 
 import android.os.Bundle;
 
+import com.elghaied.android.forecast.model.City;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -15,10 +16,13 @@ import android.widget.TextView;
 
 import com.elghaied.android.forecast.databinding.ActivityFavoriteBinding;
 
+import java.util.ArrayList;
+
 public class FavoriteActivity extends AppCompatActivity {
 
     private ActivityFavoriteBinding binding;
     private TextView mTextViewFavoriteContent;
+    private ArrayList<City> mCities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +52,15 @@ public class FavoriteActivity extends AppCompatActivity {
 
         Log.d("FavTest",strMessage);
         mTextViewFavoriteContent.setText(strMessage);
+
+        mCities = new ArrayList<>();
+        City city1 = new City("Montréal", "Légères pluies", "22°C", R.drawable.cloud);
+        City city2 = new City("New York", "Ensoleillé", "22°C", R.drawable.cloud);
+        City city3 = new City("Paris", "Nuageux", "24°C", R.drawable.cloud);
+        City city4 = new City("Toulouse", "Pluies modérées", "20°C", R.drawable.weather_sunny_white);
+        mCities.add(city1);
+        mCities.add(city2);
+        mCities.add(city3);
+        mCities.add(city4);
     }
 }
