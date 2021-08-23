@@ -1,6 +1,7 @@
 package com.elghaied.android.forecast;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         mTextViewCityDesc =(TextView) findViewById(R.id.text_city_desc);
         mTextViewCityTemp =(TextView) findViewById(R.id.text_city_temp);
         mLinearLayoutConnectionNotification = (LinearLayout) findViewById(R.id.connection_notification);
+
+
+        // Buttons .
         mButtonFirst = (Button) findViewById(R.id.button_first);
         mButtonFirst.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -51,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mButtonFav = (Button) findViewById(R.id.button_fav);
+        mButtonFav.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Going to Favorite activity 
+                Intent intent = new Intent(context, FavoriteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Testing connection .
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(
                 Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -61,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
             mLinearLayoutConnectionNotification.setVisibility(View.VISIBLE);
         }
 
+
+        // Assign text to TextView elements.
         mTextViewCityName.setText(R.string.city_name);
         mTextViewCityDesc.setText(R.string.city_desc);
         mTextViewCityTemp.setText(R.string.city_temp);
