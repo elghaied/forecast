@@ -20,6 +20,7 @@ import com.elghaied.android.forecast.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextViewCityName;
     private TextView mTextViewCityDesc;
     private TextView mTextViewCityTemp;
+    private Button mButtonFav;
+    private Button mButtonFirst;
     private LinearLayout mLinearLayoutConnectionNotification;
+    private Context context =this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
         mTextViewCityName =(TextView) findViewById(R.id.text_city_name);
         mTextViewCityDesc =(TextView) findViewById(R.id.text_city_desc);
         mTextViewCityTemp =(TextView) findViewById(R.id.text_city_temp);
+        mLinearLayoutConnectionNotification = (LinearLayout) findViewById(R.id.connection_notification);
+        mButtonFirst = (Button) findViewById(R.id.button_first);
+        mButtonFirst.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(context, "Second button clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(
                 Context.CONNECTIVITY_SERVICE);
@@ -54,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
         mTextViewCityDesc.setText(R.string.city_desc);
         mTextViewCityTemp.setText(R.string.city_temp);
 
+    }
+
+
+    public void SecondButton(View view) {
+        Toast.makeText(this, "Second button clicked", Toast.LENGTH_SHORT).show();
     }
 
 
